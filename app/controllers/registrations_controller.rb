@@ -71,7 +71,7 @@ end   # def create
   def devise_create
     build_resource
     # Want to save Stripe payment as well
-    if resource.save_with_paymment
+    if resource.save_with_payment
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_navigational_format?
         sign_in(resource_name, resource)
